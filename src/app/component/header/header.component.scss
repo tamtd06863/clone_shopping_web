@@ -1,0 +1,241 @@
+.container {
+
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+}
+
+.top-sticky-navbar {
+  width: auto;
+  height: 40px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  border: 1px solid #F1F1F1;
+  padding-right: 30px;
+  color: #5B5B5B;
+}
+
+.divider {
+  border-left: 1px solid #F1F1F1;
+  height: 20px;
+}
+
+.top-sticky-navbar a {
+  color: #5B5B5B;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.top-sticky-navbar p {
+  margin: 0;
+}
+
+.top-sticky-navbar a:hover {
+  color: #FED701;
+  transition: all 0.5s;
+}
+
+.main-sticky-navbar {
+  width: auto;
+  height: 162px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-top: 1px solid #F1F1F1;
+  color: #5B5B5B;
+}
+
+.top-main-sticky-navbar {
+  width: 100%;
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+}
+
+.top-main-sticky-navbar a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+.top-main-sticky-navbar a:hover {
+  background-color: #FED700;
+  color: white;
+  border-radius: 100px;
+  padding: 5px;
+  transition: all 0.3s;
+}
+
+.dropdown {
+  display: none;
+  color: black;
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+  width: auto;
+  white-space: nowrap;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.dropdown:hover {
+  background-color: #FED700;
+  color: white;
+  transition: all 0.3s;
+}
+
+.top-main-sticky-navbar>a:hover .dropdown {
+  display: block;
+}
+
+
+.middle-main-sticky-navbar {
+  width: 100%;
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.middle-main-sticky-navbar input {
+  border: none;
+  background-color: #F3F3F3;
+  border-radius: 100px;
+  width: 210px;
+  height: 38px;
+  padding: 0 10px;
+}
+
+.middle-main-sticky-navbar button {
+  border: none;
+  background-color: transparent;
+  align-items: center;
+}
+
+.middle-main-sticky-navbar button:hover {
+  cursor: pointer;
+  color: #FED700;
+  transition: all 0.3s;
+}
+
+.shopping-cart {
+  color: white;
+  background-color: black !important;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.shopping-cart:hover {
+  background-color: #FED700;
+  color: white;
+  transition: all 0.3s;
+}
+
+.middle-main-sticky-navbar img {
+  width: 167.25px;
+  height: 50px;
+}
+
+.bottom-main-sticky-navbar {
+  width: 100%;
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bottom-main-sticky-navbar a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 20px;
+  font-size: 13px;
+}
+
+.bottom-main-sticky-navbar a:hover {
+  background-color: #FED700;
+  color: white;
+  border-radius: 100px;
+  transition: all 0.3s;
+}
+
+.big-img {
+  display: flex;
+  width: auto;
+  height: 567px;
+  background-color: #F0F0F0;
+}
+
+.guarentee {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 30px 30px 20px;
+  background-color: #F0F0F0;
+  line-height: 0;
+}
+
+.guarentee p{
+  font-size: 10px;
+}
+
+.authentic {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.delivery {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.support {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.guarentee h3 {
+  color: #FFC300;
+}

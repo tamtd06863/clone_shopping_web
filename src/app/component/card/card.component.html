@@ -1,0 +1,743 @@
+<div class="products">
+
+  <div class="products-grid">
+    <div class="ps-shoe" (click)="navigateToDetail(product.id)">
+      <div class="ps-shoe-thumnail">
+        <div class="ps-shoe-lable">
+          <span>New</span>
+        </div>
+        <img src="{{product.imgURL}}"
+             alt="">
+      </div>
+
+      <div class="ps-shoe-content">
+        <div class="ps-shoe-detail">
+          <div class="ps-shoe-name">
+            <span><B>{{product.name}}</B></span>
+          </div>
+
+          <div class="ps-shoe-rate">
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+          </div>
+
+          <div class="price">
+            <span><b>{{product.price}} đ</b></span>
+          </div>
+
+          <div class="btn-addToCart">
+            <button class="AddToCart" mat-flat-button (click)="$event.stopPropagation(); addProductToCard(product.id)">ADD</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/fd4329-002-giay-nike-air-max-nuaxis-gia-tot-den-king-shoes-12jpeg/500_fd4329-002-giay-nike-air-max-nuaxis-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE AIR MAX NUAXIS 1</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>2,200,000 đ</b></span>-->
+    <!--            <del class="old-price">2,900,000 đ</del>-->
+    <!--          </div>-->
+
+    <!--&lt;!&ndash;          <mat-divider></mat-divider>&ndash;&gt;-->
+    <!--          <section>-->
+    <!--            <div class="example-label">Flat</div>-->
+    <!--            <div class="example-button-row">-->
+    <!--              <button mat-flat-button (click)="addToCart(itemInCart)">Add</button>-->
+    <!--            </div>-->
+    <!--          </section>-->
+
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/dr7883-102-giay-nike-air-force-1-low-shadow-gia-tot-den-king-shoes-9jpg/500_dr7883-102-giay-nike-air-force-1-low-shadow-gia-tot-den-king-shoes-9.jpg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>AIR FORCE 1 SLOW SHADOW</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,600,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/fn7153-101-giay-nike-air-peg-2k5-phantom-and-coconut-milk-gia-tot-den-king-shoes-12jpeg/500_fn7153-101-giay-nike-air-peg-2k5-phantom-and-coconut-milk-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE AIR PEGASUS 2005</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>2,900,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/jordan-1-mid-chicago-white-toe-554725-173-king-shoes-sneaker-real-hcm-1624274017jpeg/500_jordan-1-mid-chicago-white-toe-554725-173-king-shoes-sneaker-real-hcm-1624274017.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>JORDAN 1 MID 'CHICAGO WHITE TOE'</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,900,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/fj7126-106-giay-nike-free-metcon-6-white-elemental-pink-gia-tot-den-king-shoes-12jpg/500_fj7126-106-giay-nike-free-metcon-6-white-elemental-pink-gia-tot-den-king-shoes-12.jpg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE FREE METCON 6</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,900,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/fd2723-103-giay-nike-air-zoom-pegasus-41-gia-tot-den-king-shoes-12jpeg/500_fd2723-103-giay-nike-air-zoom-pegasus-41-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE PEGASUS 41</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,200,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/bq6806-100-giay-nike-blazer-mid-77-vintage-gia-tot-den-king-shoes-12jpeg/500_bq6806-100-giay-nike-blazer-mid-77-vintage-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE BLAZER MID '77 VINTAGE</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>2,900,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/nike-jordan-1-low-white-black-gym-red-ib8971-gia-tot-den-king-shoesjpg/500_nike-jordan-1-low-white-black-gym-red-ib8971-gia-tot-den-king-shoes.jpg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE JORDAN 1 SLOW WHITE BLACK GYM RED</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,600,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/giay-nike-air-force-1-low-flax-cj9179-200-chi%CC%81nh-ha%CC%83ng-de%CC%82%CC%81n-king-shoes-12-1647674433jpeg/500_gia%CC%80y-nike-air-force-1-low-flax-cj9179-200-chi%CC%81nh-ha%CC%83ng-de%CC%82%CC%81n-king-shoes-12-1647674433.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>AIR FORCE 1 WB</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,900,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/dr0500-101-giay-nike-air-force-1-mid-x-off-white-gia-tot-den-king-shoes-1jpg/500_dr0500-101-giay-nike-air-force-1-mid-x-off-white-gia-tot-den-king-shoes-1.jpg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>AIR FORCE 1 MID X OFF WHITE</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>4,800,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/849559-005-giay-nike-air-max-2017-chinh-hang-gia-tot-den-king-shoes-12jpeg/500_849559-005-giay-nike-air-max-2017-chinh-hang-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE AIR MAX 2017</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,200,000 đ</b></span>-->
+    <!--            <DEL class="old-price">3,900,000 đ</DEL>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/dv0791-200-giay-nike-air-force-1-07-lx-chinh-hang-gia-tot-den-king-shoes-13jpeg/500_dv0791-200-giay-nike-air-force-1-07-lx-chinh-hang-gia-tot-den-king-shoes-13.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE AIR FORCE 1 07 LX</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,600,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/dr2615-001-giay-nike-zoomx-invicible-run-fk3-chinh-hang-gia-tot-den-king-shoes-12jpeg/500_dr2615-001-giay-nike-zoomx-invicible-run-fk3-chinh-hang-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE ZOOMX INVINCIBLE RUN FK 3</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,900,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/cz0790-102-giay-air-jordan-1-low-og-mocha-gia-tot-den-king-shoes-12jpeg/500_cz0790-102-giay-air-jordan-1-low-og-mocha-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>JORDAN 1 LOW OG 'MOCHA'</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>5,200,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/giay-nike-air-force-1-white-black-ct2302-100-king-shoes-sneaker-real-hcm-43-1632372517jpeg/500_gia%CC%80y-nike-air-force-1-white-black-ct2302-100-king-shoes-sneaker-real-hcm-43-1632372517.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>AIR FORCE 1 LOW WHITE BLACK</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,600,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/fn7459-001-giay-nike-air-max-pulse-pure-platinum-gia-tot-king-shoes-3jpg/500_fn7459-001-giay-nike-air-max-pulse-pure-platinum-gia-tot-king-shoes-3.jpg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>NIKE AIR MAX FULSE</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>2,900,000 đ</b></span>-->
+    <!--            <DEL class="old-price">3,200,000 đ</DEL>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/dr8869-200-giay-nike-air-jordan-3-archaeo-brown-chinh-hang-gia-tot-den-king-shoes-12jpeg/500_dr8869-200-giay-nike-air-jordan-3-archaeo-brown-chinh-hang-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>AIR JORDAN 3 RETRO</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>2,900,000 đ</b></span>-->
+    <!--            <DEL class="old-price">5,800,000 đ</DEL>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/id0544-giay-adidas-prophere-olive-gia-tot-den-king-shoes-12jpeg/500_id0544-giay-adidas-prophere-olive-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>ADIDAS PROPHERE GREY</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>2,900,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/fd8311-700-giay-nike-air-zoom-alphafly-3-gia-tot-den-king-shoes-15jpeg/500_fd8311-700-giay-nike-air-zoom-alphafly-3-gia-tot-den-king-shoes-15.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>AIR ZOOM ALPHAFLY 3</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>9,900,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/gx9249-giay-chay-bo-adidas-4dfwd-2-den-chinh-hang-gia-tot-den-king-shoes-1jpg/500_gx9249-giay-chay-bo-adidas-4dfwd-2-den-chinh-hang-gia-tot-den-king-shoes-1.jpg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>ADIDAS 4DFWFD 2</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>3,200,000 đ</b></span>-->
+    <!--            <DEL class="old-price">3,800,000 đ</DEL>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/nike-dunk-hi-cu7544-400-king-shoes-sneaker-real-hcm35-1623475900jpg/500_nike-dunk-hi-cu7544-400-king-shoes-sneaker-real-hcm35-1623475900.jpg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>DUNK HIGH AMBUSH</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>12,000,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/air-jordan-1-hi-trophy-room-chicago-da2728-100-king-shoes-sneaker-real-hcm-1624273272jpeg/500_air-jordan-1-hi-trophy-room-chicago-da2728-100-king-shoes-sneaker-real-hcm-1624273272.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>AIR JORDAN 1 HI TROPHY ROOM CHICAGO</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>60,000,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="ps-shoe">-->
+    <!--      <div class="ps-shoe-thumnail">-->
+    <!--        <div class="ps-shoe-lable">-->
+    <!--          <span>New</span>-->
+    <!--        </div>-->
+    <!--        <img src="https://kingshoes.vn/data/upload/thumb/cz0790-106-giay-nike-air-jordan-1-low-black-toe-chinh-hang-gia-tot-den-king-shoes-12jpeg/500_cz0790-106-giay-nike-air-jordan-1-low-black-toe-chinh-hang-gia-tot-den-king-shoes-12.jpeg.webp"-->
+    <!--             alt="">-->
+    <!--      </div>-->
+
+    <!--      <div class="ps-shoe-content">-->
+    <!--        <div class="ps-shoe-detail">-->
+    <!--          <div class="ps-shoe-name">-->
+    <!--            <span><B>AIR JORDAN 1 SLOW SB CHICAGO</B></span>-->
+    <!--          </div>-->
+
+    <!--          <div class="ps-shoe-rate">-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--            <span class="material-symbols-outlined">star</span>-->
+    <!--          </div>-->
+
+    <!--          <div class="price">-->
+    <!--            <span><b>4,800,000 đ</b></span>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+  </div>
+
+</div>

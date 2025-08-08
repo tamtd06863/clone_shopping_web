@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<div class="container">
+
+  @for (item of cardListHome; track item.id){
+    <app-card [product] = "item"></app-card>
+  }
+
+</div>
+
+
+<ul class="product-list">
+  <a style="background-color: rgb(252, 206, 54);" href="">1</a>
+  <a href="">2</a>
+  <a href="">3</a>
+  <a href="">4</a>
+  <a href="">></a>
+  <a href="">>></a>
+</ul>
+<app-footer></app-footer>
